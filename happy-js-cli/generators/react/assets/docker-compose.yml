@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  frontend:
+    image: node:18-alpine
+    volumes:
+      - './:/code'
+    working_dir: /code
+    user: node
+    command:
+      - sh
+      - -c
+      - |
+        npm install
+        npm run dev
+    ports:
+      - "3000:3000"
+      - "6006:6006"
+    environment:
+      - REACT_APP_DISABLE_LOGGING=false

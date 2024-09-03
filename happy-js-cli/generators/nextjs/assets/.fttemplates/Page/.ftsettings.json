@@ -1,0 +1,8 @@
+{
+  "omitParentDirectory": true,
+  "customVariables": [
+    "ViewName",
+    "PageTitle",
+    "Description"
+  ]
+}

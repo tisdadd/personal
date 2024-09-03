@@ -1,0 +1,16 @@
+{
+  "name": "sample-quizzer",
+  "version": "1.0.0",
+  "description": "A simple quiz application to use with the sample questions aquired in the readings.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Adsit",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "glob": "^7.2.0",
+    "yarn": "^1.22.21"
+  }
+}

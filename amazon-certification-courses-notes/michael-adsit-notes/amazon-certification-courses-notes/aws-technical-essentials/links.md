@@ -1,0 +1,160 @@
+> [Back To readme](./readme.md)
+
+# Links
+
+Links supplied by the class to extra resources, along with extra information on why they may be useful if there.
+
+- [Benefits of Cloud Computing](https://aws.amazon.com/what-is-cloud-computing/)
+  - Agility - Quick access to multiple techs allow building out what you need as you need it
+  - Elasticity - You may scale the resources you need as you need them, up or down
+  - Cost Savings - No need to maintain your own servers (and employee time keeping them running), and variable expenses cheaper because of economies of scale
+  - Deploy Globally in Minutes - With servers closer to end users, your application latency is less
+- [Types of Cloud Computing](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/types-of-cloud-computing.html)
+  - Cloud Computing Models
+    - Infrastructure as a Service (IaaS) - Similar to traditional IT Departments, this gives the building blocks to customize as needed
+      - Networking
+      - Computers (VM or real)
+      - Data Storage
+    - Platform as a Service (PaaS) - A step of abstraction above IaaS, allows focus on deployment and management of your applications
+    - Software as a Service (SaaS) - Usually an end user product, the user has no need to think about the guts at all (think of gmail)
+  - Cloud Computing Deployment Models
+    - Cloud - Everything is on the cloud - either from start or migrated
+    - Hybrid - Part of the services are on the cloud, while part of it kept on internal system
+    - [On-premises](https://aws.amazon.com/hybrid/services/#Use_case.3A_Cloud_services_on-premises) (private cloud) - Maintaining own data center, but using cloud tools there
+- [What is AWS](https://aws.amazon.com/what-is-aws/) - AWS marketing page, why use it
+  - Most Functionality - More services and features than other cloud companies
+  - Largest commuity of customers and partners - Lots of people use it (not from article but - if for some reason it has an issue, many sites do and people understand more because much of the internet is not working)
+  - Most secure - Built to meet security requirements of military, banks, ect.
+  - Fastest pace of innovation - New technologies show up quickly, or are invented here, to make life easier
+  - Most proven operational expertise - Most operational experience at greater scale than any other cloud provider
+  - Global network of AWS Regions - More regions and availablilty zones
+- [AWS Overview](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/aws-overview.pdf) - Too much to summerize here, see table of contents.
+  - TODO: Read/Review at the end of course
+- [Regions and Availability Zones](https://aws.amazon.com/about-aws/global-infrastructure/regions_az/) - An overview of Regions and AZs available, as well as edge locations in addition information on the below
+  - AWS Local Zones - Places AWS services/resources closer to end users for single-digit millisecond latencies
+  - AWS Wavelength - For single-digit millisecond latiences to mobile devices, works within telecommunications data centers
+  - AWS Outposts - Use same AWS Services in local data center
+- [AWS service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) - Model for interacting with services programmically
+  - Used to work with the AWS Services Programmically 
+  - You may also use the AWS CLI or various SDKs.
+  - URL Pattern: protocol://service-code.region-code.amazonaws.com
+  - Example full URL: https://dynamodb.us-west-2.amazonaws.com
+  - If no region is used (not all services require it), it will route to us-east-1 (the default region)
+  - Includes links to see all service endpoints, and inforaation on FIPS (Federal Information Processing Standard) endpoints
+- [AWS Regional Services](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/) - Link farm of regional services
+- [AWS Management Console](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/learn-whats-new.html) - Entry to the docs on getting started with the AWS Management Console
+- [AWS CLI](https://aws.amazon.com/cli/) - Entry point for CLI documentation (at time of this writing, aws-shell is in developer preview, may want to check out later?)
+- [Tools to Build on AWS](https://aws.amazon.com/tools/) - Links to help get up and running developing for AWS, including the various SDKs.
+- [Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/) - An overview of the AWS Shared Responsibility Model
+- [Enabling a hardware MFA device (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_physical.html) - How to set up a hardware Multi Factor Authentication device
+- [Enabling a U2F security key (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_u2f.html) - How to set up a Universal 2nd Factor security key
+- [Enabling a virtual multi-factor authentication device (console)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html) - Set up a virtual key, such as an app on a phone
+- [What is IAM](https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/introduction.html) - The intro doc for IAM
+- [IAM Identities](https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/id.html) - Users, groups, and roles
+  - You start with a root user when creating the AWS account
+  - Users are an entity inside of AWS, representing a person or service to interact with AWS
+  - User Groups are collections of Users, and have the specific permissions
+  - Roles are simular to a uzer, but does not have any credentials - can be used to act as a test user for instance, or by a federated user
+  - Temporary Credentials - Usually used with roles, they expire after some time automatically.
+  - Information on why use Role vs User is available on this page as well.
+- [Access management for AWS resources](https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/access.html) - Intro document to the Access Management
+  - All requests implicily denied (other than for root user)
+- [Security Best Practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) - Best practices document for AWS IAM
+  - A "MUST READ"
+  - Lock away your AWS Account Root User Access Keys
+    - DO NOT HAVE A ROOT USER ACCESS KEY, MAKE A SEPERATE USER
+  - Use your IAM User to create roles/groups for tasks other than identity management, then use those users
+  - AWS Managed Policies do not follow the Principle of Least Priviledge - you may need to tweak them for more granularity
+  - For custom policies, make use of customer managed policies instead of inline policies
+  - Much More...
+- [How to create and manage users within AWS Single Sign-On](https://aws.amazon.com/blogs/security/how-to-create-and-manage-users-within-aws-sso/) - How to set up the AWS SSO
+  - TODO: Read Fully After Lessons, is similar to normal federated sign on setup at first glance.
+- [Compute Services](https://docs.aws.amazon.com/whitepapers/latest/aws-overview/compute-services.html) - A listing and technical overview of the various AWS Compute Services
+- [Compute for any Workload](https://aws.amazon.com/products/compute/) - Similar to Compute Services Above, but more of a marketing slant
+- [AWS Compute Blog](https://aws.amazon.com/blogs/compute/) - A good place to keep up to date and learn more about AWS compute services - many tutorials/knowledge articles
+- [AWS EC2](https://aws.amazon.com/ec2/) - Marketing page for the EC2
+- [Amazon Machine Images (AMI)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) - Entry to the Docs on AMIs
+- [Create an Amazon EBS-backed Linux AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html) - How to steps for creating a custom AMI.
+- [Features of EC2 Image Builder](https://docs.aws.amazon.com/imagebuilder/latest/userguide/what-is-image-builder.html) - Entry to Docs on Image Builder
+- [Default VPC and default subnets](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html) - Information about the default VPC and subnets created in each AZ, and what can keep it from being made automatically.
+- [Reliability Piller - AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html) - Entry to the docs of Reliability, one of the six pillars of Amazon Well Architected Framework. Followed link in archived paper, looking at the [AWS Well Architected](https://aws.amazon.com/architecture/well-architected/) page may not be bad in addition to this.
+- [EC2 Instance Lifecyle](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html) - A detailed look at the EC2 instance lifecycle
+- [Amazon EC2 Pricing](https://aws.amazon.com/ec2/pricing/) - The pricing for the EC2 on amazon, has links to all the pricing types available
+- [Containers on AWS](https://aws.amazon.com/containers/services/) - Entry page to the container tools and services available on AWS - includes categories for Registry, Orchestration, Compute, and Tools.
+- [Docker: What is a Container](https://www.docker.com/resources/what-container) - More about containers, specifically Docker Containers.
+- [Amazon Elastic Container Service (Amazon ECS)](https://aws.amazon.com/ecs/) - Marketing page for ECS
+- [Amazon ECS Container Agent](https://github.com/aws/amazon-ecs-agent) - The git(hub) repo for the Amazon ECS Container Agent.
+- [Amazon ECS Container Instances](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html) - Entry to Docs on ECS Instances.
+- [Building Containerized Applications on AWS](https://www.coursera.org/learn/containerized-apps-on-aws) - A course on coursera for learning to build containerized applications.
+- [Resize Images on the Fly with Amazon S3, AWS Lambda, and Amazon API Gateway](https://aws.amazon.com/blogs/compute/resize-images-on-the-fly-with-amazon-s3-aws-lambda-and-amazon-api-gateway/) - A tutorial on resizing images on the fly in AWS with Lambdas - as well as why do so rather than on upload.
+- [Serverless on AWS](https://aws.amazon.com/serverless/) - Serverless marketing page.
+- [Building Modern Python Applications on AWS](https://www.coursera.org/learn/building-modern-python-applications-on-aws) - A coursera course
+- [Getting Started with Serverless](https://aws.amazon.com/serverless/getting-started/) - A technical and training landing page to help learn serverless.
+- [Building Applications with Serverless Architectures](https://aws.amazon.com/lambda/serverless-architectures-learn-more/) - A whitepaper on building serverless applications - must fill in some user information before download.
+- [Best practices for organizing larger serverless applications](https://aws.amazon.com/blogs/compute/best-practices-for-organizing-larger-serverless-applications/) - A blog post on best practices. Includes seperating routes to individual functions routed by API Gateway instead of elsewhere, ect. Basically - smaller units of work are better.
+- [AWS Serverless Application Model (SAM)](https://aws.amazon.com/serverless/sam/) - Useful for debugging and testing locally and remotely. Linked from Best Practices Paper. 
+- [Configuring AWS Lambda functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-functions.html) - Entry to Docs on AWS Lambda Configurations and setup.
+- [10 Things Serverless Architects Should Know](https://aws.amazon.com/blogs/architecture/ten-things-serverless-architects-should-know/) - Good things to learn, with lots of links. TODO - check links over more after courses.
+- [Wild Rydes Workshop](https://webapp.serverlessworkshops.io/) - Build out a serverless application at your own pace. Linked from the 10 Things Serverless Achitects Should Know. TODO - Evalulate if should do after rest of courses
+- [AWS Alien Attack: A Serverless Adventure](https://catalog.us-east-1.prod.workshops.aws/workshops/fc36cb5a-de1b-403f-84dd-cc824390c548/en-US) - Create a game using serverless technologies! TODO - Evalulate if should do after rest of courses
+- [Standford Introduction to Computer Networking](https://web.stanford.edu/class/cs101/network-1-introduction.html) - Gives a brief intro to computer networks, includes some pictures.
+- [CIDR: what is classless inter-domain routing](https://www.ionos.com/digitalguide/server/know-how/cidr-classless-inter-domain-routing/) - Goes through the CIDR, which helped drastically with keeping IPv4 working. 
+- [CIDR.xyz](https://cidr.xyz/) - Interactive CIDR Range Visualizer
+- [VPC with public and private subnets (NAT)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html) - How to set up a common scenario of public/private subnet, as well as securing it.
+- [Managing route tables for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html) - How route tables work in the VPC - when you create a VPC with Internet Gateway with the wizard it automaticlaly creates a custom one.
+- [How AWS Site-to-Site VPN Works](https://docs.aws.amazon.com/vpn/latest/s2svpn/how_it_works.html) - Entry to docs on setting up Virtual Private Gateway, explaining at high level how it works.
+- [What is Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html) - Entry to docs on Amazon VPC
+- [Overview of VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html) - Good starting point if not sure what these are, or how you should allocate them.
+- [Example Routing Options](https://docs.aws.amazon.com/vpc/latest/userguide/route-table-options.html) - Some practical examples of routing tables, including middlebox and load balancing.
+- [Work with Route Tables](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html) - Some things you may do with route tables, and instructions on doing so via the AWS console or links to the commands via command line.
+- [Control trafffic to subnets with Network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html) - Information on using ACLs, a must read.
+  - Default ACL allows all traffic by default
+  - Custom Denies all traffic by default
+  - Only one ACL per subnet, but the ACL may be used by many subnets
+  - Rules done in order - must do both inbound and outbound
+  - There are [quotas](https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html) on ACLs (and other VPC resources)
+  - Rules evaluated by rule number (lower = higher priority)
+  - And much more...
+- [Control traffic to resources using security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) - How to work with security groups through the AWS console and command line.
+- [I host a website on an EC2 instance. How do I allow my users to connect on HTTP (80) or HTTPS (443)?](https://aws.amazon.com/premiumsupport/knowledge-center/connect-http-https-ec2/) - A quick example to set up both security group and ACL for a website.
+- [Cloud Storage](https://aws.amazon.com/what-is-cloud-storage/) - Marketing/summary page for cloud storage. Includes some use cases.
+- [Amazon Elastic Block Store (Amazon EBS)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html) - Entry to the docs for Amazon EBS
+- [Amazon EBS FAQs](https://aws.amazon.com/ebs/faqs/) - Questions and Answers on EBS
+- [Amazon S3](https://aws.amazon.com/s3/) - S3 marketing page.
+- [Amazon S3 Storage Classes](https://aws.amazon.com/s3/storage-classes/) - Descriptions of the uses for each of the storage classes
+  - S3 Standard is for frequently accessed, low latency data
+  - S3 Intelligent-Tiering changes tiers (Friequent, Infrequent, and Archive Instant Access) based upon usage to help save cost - smaller than 12KB will always be charged at Frequent Access tier rates
+  - S3 Standard-IA is for data accessed infrequently, but still needing instant access when needed - slightly less availability, and since one zone data will be destroyed if the AZ is.
+  - S3 Glacier - For data archiving - different types available based upon how fast it is needed.
+- [Using versioning in S3 buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html) - Entry to docs in S3 versioning.
+- [EC2 Storage](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html) - Storage options for EC2
+- [Cloud Storage on AWS](https://aws.amazon.com/products/storage/) - Listing of the storage types available for AWS, as well as some storage related services.
+- [Amazon EFS: How it works](https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html) - Overview of the EFS system, considered serverless technology as you don't need to maintain it.
+- [Amazon FSx for Windows File Server](https://aws.amazon.com/fsx/windows/) - Marketing page for FSx for Windows
+- [Amazon FSx for Lustre](https://aws.amazon.com/fsx/lustre/) - Marketing page for FSx for Lustre
+- [What is a Relational Database?](https://aws.amazon.com/relational-database/) - Describes relational databases, and which engines are available for Amazon RDS
+- [AWS Cloud Databases](https://aws.amazon.com/products/databases/) - Lists the offerings of all Amazon database types.
+- [RDS: Working with Backups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html) - How automatic and manual backups work, as well as how they are retained and storage requirements. Before changing backup settings for RDS, this is a must read.
+- [Creating and using an IAM policy for database access](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.IAMPolicy.html) - Setting up security to allow users or roles to log into the database.
+- [Amazon Virtual Private Cloud VPCs and Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.html) - Entry point to docs on how the RDS works in the VPC
+- [What Is Amazon Dynamo DB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html) - Entry point to the docs on Amazon DynamoDB.
+- [AWS Database Blog](https://aws.amazon.com/blogs/database/) - A blog to keep up to date with Amazon DB offerings, as well as many different ways on how to use them.
+- [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) - The Amazon Cloudwatch Marketing Page
+- [Getting started with Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html) - Entry to the Docs for Amazon CloudWatch.
+- [What is Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html) - Entry to the docs for Amazon CloudWatch Logs.
+- [AWS services that publish CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html) - A listing of services that publish the logs, with links to their logging specific pages.
+- [Viewing available metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/viewing_metrics_with_cloudwatch.html) - Instructions on veiwing metrics available on CloudWatch with the AWS Console and CLI.
+- [Amazon Cloudwatch pricing](https://aws.amazon.com/cloudwatch/pricing/) - How much CloudWatch costs, and a pricing calculator.
+- [Amazon Simple Notification Service (SNS)](https://aws.amazon.com/sns/) - SNS marketing page.
+- [Amazon EC2 Auto Scaling](https://aws.amazon.com/ec2/autoscaling/) - EC2 Auto Scaling marketing page.
+- [High Availability and Scalability on AWS](https://docs.aws.amazon.com/whitepapers/latest/real-time-communication-on-aws/high-availability-and-scalability-on-aws.html) - Entry to docs on High Availability and Scalability (think - get rid of single points of failure)
+- [Elastic Load Balancing features](https://aws.amazon.com/elasticloadbalancing/features/) - Features and comparisons of those features across the various types of load balancers provided by AWS, and why to choose them.
+- [AWS Certificate Manager (ACM)](https://aws.amazon.com/certificate-manager/) - Certificate manager marketing page - certs used with ACM-integrated services are free
+- [Authenticate users using an Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-authenticate-users.html) - How to authenticate users with ALB and Identity Provider.
+- [How AWS WAF works](https://docs.aws.amazon.com/waf/latest/developerguide/how-aws-waf-works.html) - Entry point to the docs on AWS WAF (Web Application Firewall).
+- [Introducing AWS Gateway Load Balancer – Easy Deployment, Scalability, and High Availability for Partner Appliances](https://aws.amazon.com/blogs/aws/introducing-aws-gateway-load-balancer-easy-deployment-scalability-and-high-availability-for-partner-appliances/) - Launch announcment for the Gateway Load Balancer, using the GENEVE protocol. So, when this is hit, it can route traffic through something else (say a firewall or intrusion detection system), then to the final endpoint.
+- [Amazon EC2 Auto Scaling FAQs](https://aws.amazon.com/ec2/autoscaling/faqs/) - Frequently asked questions about EC2 Autoscaling.
+- [Setting capacity limits on your Auto Scaling group](https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-capacity-limits.html) - Shows how to set the capacity limits (min, max, desired), therefore limiting costs
+- [Step and simple scaling policies for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html) - Describes how these policies work, as well as giving some examples of how to create alarems around them. Also, explains how things are rounded for the step policies, and what happens in warm-up and shut down states.
+- [Target tracking scaling policies for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html) - Docs for these policies. These policies scale based upon a spacific metric target (say 50% overall CPU usage) from a given EC2 Autoscaling Group. It is recommended to turn on one minute intervals for metrics, and you may also utlize this for scale up, and another policy for scale down.
+- [Creating an Auto Scaling group using a launch template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html) - Docs detailing how to do this.
